@@ -1,316 +1,234 @@
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import Navbar from "./components/Navbar"
+
 export default function Home() {
+  const [productLink, setProductLink] = useState("")
+
+  const handleAnalyze = () => {
+    if (productLink.toLowerCase().includes("watch")) {
+      window.location.href = "/analyze?product=watch"
+    } else if (productLink.toLowerCase().includes("shoe")) {
+      window.location.href = "/analyze?product=shoe"
+    } else {
+      window.location.href = "/analyze?product=bag"
+    }
+  }
+
   return (
-    <main className="min-h-screen bg-[#f6f7f2] text-[#111827]">
-
-      {/* NAVBAR */}
-
-      <nav className="flex items-center justify-between px-8 md:px-16 py-8">
-
-        <div className="text-4xl font-semibold tracking-tight lowercase flex items-center gap-1">
-          <span className="font-serif italic">vura</span>
-          <span className="text-emerald-500">♡</span>
-        </div>
-
-        <div className="hidden md:flex items-center gap-10 text-sm text-zinc-700">
-          <a href="#">Home</a>
-          <a href="#">Features</a>
-          <a href="#">How it works</a>
-          <a href="#">About us</a>
-        </div>
-
-        <button className="bg-[#18321f] hover:bg-[#24472d] text-white px-6 py-3 rounded-full text-sm transition-all duration-300 shadow-sm">
-          Get Extension
-        </button>
-
-      </nav>
-
+    <main className="min-h-screen bg-[#f6f7f2] text-[#111827] overflow-hidden">
+      <Navbar />
 
       {/* HERO SECTION */}
-
-      <section className="px-8 md:px-16 pt-10 pb-24">
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-
+      <section className="px-6 md:px-16 pt-32 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 gap-y-16 items-center"
+        >
           {/* LEFT SIDE */}
-
           <div>
-
-            <div className="inline-flex items-center px-5 py-2 rounded-full bg-[#eef2e8] text-[#5b745d] text-xs tracking-[0.3em] uppercase mb-10">
+            <div className="inline-flex items-center rounded-full bg-[#eef2e3] px-6 py-3 text-sm tracking-[0.3em] uppercase text-[#8a9b6d]">
               AI Shopping Assistant
             </div>
 
-            <h1 className="text-[64px] md:text-[86px] leading-[0.95] tracking-tight text-[#111827]">
-
-              <span className="font-serif">
-                Shop smarter.
-              </span>
-
+            <h1 className="text-5xl md:text-7xl font-serif leading-[0.95] mt-8 text-[#0f172a]">
+              Shop smarter.
               <br />
-
-              <span className="font-serif">
-                Avoid fake hype.
-              </span>
-
+              Avoid fake hype.
               <br />
-
-              <span className="italic text-[#70835f] font-serif">
+              <span className="italic text-[#8a9b6d]">
                 Know before you buy.
               </span>
-
             </h1>
 
-
-            <p className="mt-10 text-zinc-500 text-xl leading-relaxed max-w-xl">
-              VURA analyzes products and sellers instantly
-              so you can shop with confidence.
+            <p className="mt-10 text-xl leading-relaxed text-[#667085] max-w-2xl">
+              VURA analyzes products and sellers instantly so you can shop with confidence across Shopee, Lazada, TikTok Shop, Zalora, and more.
             </p>
 
-
-            {/* SEARCH BAR */}
-
+            {/* INPUT */}
             <div className="mt-12 flex flex-col md:flex-row gap-4">
-
               <input
                 type="text"
-                placeholder="Paste product link here..."
-                className="flex-1 px-7 py-5 rounded-full bg-white border border-zinc-200 outline-none text-zinc-700 shadow-sm"
+                placeholder="Type watch, shoe, or bag..."
+                value={productLink}
+                onChange={(e) => setProductLink(e.target.value)}
+                className="flex-1 rounded-full border border-[#d0d5dd] bg-white px-6 py-5 text-lg outline-none"
               />
 
-              <button className="bg-[#18321f] hover:bg-[#24472d] text-white px-10 py-5 rounded-full transition-all duration-300 shadow-lg">
-                ✦ Analyze
+              <button
+                onClick={handleAnalyze}
+                className="rounded-full bg-[#123524] px-10 py-5 text-lg font-semibold text-white transition hover:scale-105"
+              >
+                Analyze Product
               </button>
-
             </div>
-
-
-            {/* SOCIAL PROOF */}
-
-            <div className="mt-10 flex items-center gap-4">
-
-              <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full bg-zinc-300 border-2 border-white"></div>
-                <div className="w-10 h-10 rounded-full bg-zinc-400 border-2 border-white"></div>
-                <div className="w-10 h-10 rounded-full bg-zinc-500 border-2 border-white"></div>
-                <div className="w-10 h-10 rounded-full bg-zinc-600 border-2 border-white"></div>
-              </div>
-
-              <p className="text-zinc-500 text-sm">
-                Trusted by 10,000+ smart shoppers
-              </p>
-
-            </div>
-
           </div>
-
 
           {/* RIGHT SIDE */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+            }}
+            className="relative"
+          >
+            <div className="absolute inset-0 rounded-[40px] bg-[#dfe8d5] blur-3xl opacity-60" />
 
-          <div className="relative">
-
-            <div className="bg-[#647553] rounded-[40px] h-[620px] relative overflow-hidden shadow-2xl">
-
-              <div className="absolute inset-0 bg-gradient-to-br from-[#7d8f6b] to-[#3c4b36]"></div>
-
-
-              {/* PRODUCT CARD */}
-
-              <div className="absolute left-10 top-14 bg-[#f7f6f1] rounded-[32px] p-8 w-[360px] shadow-2xl">
-
-                <div className="w-full h-[260px] rounded-[24px] bg-[#d8d7cf] flex items-center justify-center text-8xl">
-                  👜
-                </div>
-
-                <div className="mt-6">
-
-                  <p className="text-zinc-400 text-sm uppercase tracking-[0.2em]">
-                    Luxury Bag
-                  </p>
-
-                  <h3 className="text-3xl font-semibold mt-2 text-[#111827]">
-                    ₱8,490
-                  </h3>
-
-                  <p className="text-[#70835f] mt-2 text-sm">
-                    15% lower than market average
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              {/* TRUST SCORE CARD */}
-
-              <div className="absolute right-8 top-20 bg-[#f7f6f1] rounded-[30px] p-8 w-[260px] shadow-2xl">
-
-                <p className="text-zinc-500 text-sm uppercase tracking-[0.15em]">
-                  VURA Trust Score
-                </p>
-
-                <div className="mt-6 text-center">
-
-                  <div className="text-6xl font-bold text-[#18321f]">
-                    85
-                  </div>
-
-                  <p className="text-zinc-400 mt-1">
-                    /100
-                  </p>
-
-                  <div className="mt-4 bg-[#e8f3e3] text-[#36553f] py-2 rounded-full text-sm font-medium">
-                    ✓ Looks good
-                  </div>
-
-                </div>
-
-
-                <div className="mt-8 space-y-4 text-sm">
-
-                  <div className="flex justify-between text-zinc-600">
-                    <span>Seller reliability</span>
-                    <span className="text-[#36553f] font-semibold">High</span>
-                  </div>
-
-                  <div className="flex justify-between text-zinc-600">
-                    <span>Product popularity</span>
-                    <span className="text-[#36553f] font-semibold">Very good</span>
-                  </div>
-
-                  <div className="flex justify-between text-zinc-600">
-                    <span>Price check</span>
-                    <span className="text-[#36553f] font-semibold">Good deal</span>
-                  </div>
-
-                  <div className="flex justify-between text-zinc-600">
-                    <span>Review authenticity</span>
-                    <span className="text-[#36553f] font-semibold">Looks real</span>
-                  </div>
-
-                </div>
-
-              </div>
-
+            <div className="relative rounded-[40px] bg-white p-6 shadow-2xl">
+              <Image
+                src="/images/bag.png"
+                alt="Luxury Bag"
+                width={700}
+                height={700}
+                className="rounded-[30px] object-cover"
+                priority
+              />
             </div>
-
-          </div>
-
-        </div>
-
+          </motion.div>
+        </motion.div>
       </section>
 
-
-      {/* FEATURES BAR */}
-
-      <section className="px-8 md:px-16 pb-24">
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 bg-[#f0f1eb] rounded-[30px] p-8 border border-[#e5e7df]">
-
-          <div>
-            <h3 className="font-semibold text-[#18321f]">
-              Detect risky sellers
+      {/* FEATURES */}
+      <section className="px-6 md:px-16 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="rounded-3xl bg-white p-8 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              AI Trust Score
             </h3>
 
-            <p className="text-zinc-500 mt-2 text-sm leading-relaxed">
-              We analyze seller ratings and history to protect you.
+            <p className="mt-4 text-[#667085] text-lg">
+              Analyze seller credibility and fake review patterns instantly.
             </p>
           </div>
 
-
-          <div>
-            <h3 className="font-semibold text-[#18321f]">
-              Check real reviews
+          <div className="rounded-3xl bg-white p-8 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              Marketplace Comparison
             </h3>
 
-            <p className="text-zinc-500 mt-2 text-sm leading-relaxed">
-              VURA filters fake reviews and shows you the truth.
+            <p className="mt-4 text-[#667085] text-lg">
+              Compare prices across Shopee, Lazada, TikTok Shop, and more.
             </p>
           </div>
 
-
-          <div>
-            <h3 className="font-semibold text-[#18321f]">
-              Compare prices
+          <div className="rounded-3xl bg-white p-8 shadow-sm">
+            <h3 className="text-2xl font-semibold">
+              AI Closet
             </h3>
 
-            <p className="text-zinc-500 mt-2 text-sm leading-relaxed">
-              Find better deals across multiple platforms instantly.
+            <p className="mt-4 text-[#667085] text-lg">
+              Save your favorite products and organize smarter shopping decisions.
             </p>
           </div>
-
-
-          <div>
-            <h3 className="font-semibold text-[#18321f]">
-              Shop with confidence
-            </h3>
-
-            <p className="text-zinc-500 mt-2 text-sm leading-relaxed">
-              Make smarter decisions and avoid budol.
-            </p>
-          </div>
-
         </div>
-
       </section>
 
+      {/* FOOTER */}
+      <footer className="mt-32 bg-gradient-to-r from-[#022c22] to-[#064e3b] text-white rounded-t-[50px] px-8 md:px-16 py-20">
 
-      {/* TRENDING PRODUCTS */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
 
-      <section className="px-8 md:px-16 pb-32">
+    {/* BRAND */}
+    <div>
+      <h2 className="text-6xl font-serif">
+        vura♡
+      </h2>
 
-        <div className="max-w-7xl mx-auto">
+      <p className="mt-8 text-emerald-100 text-xl leading-relaxed">
+        AI-powered shopping intelligence
+        for smarter online purchases.
+      </p>
 
-          <div className="text-center mb-16">
+      <div className="mt-10">
+        <button className="rounded-full bg-white text-[#123524] px-8 py-4 font-semibold hover:scale-105 transition">
+          Join Waitlist
+        </button>
+      </div>
+    </div>
 
-            <p className="text-[#70835f] uppercase tracking-[0.25em] text-xs">
-              Trending Now
-            </p>
+    {/* PRODUCT */}
+    <div>
+      <h3 className="text-3xl font-semibold">
+        Product
+      </h3>
 
-            <h2 className="text-5xl font-serif mt-5 text-[#111827]">
-              Popular products analyzed by VURA
-            </h2>
+      <div className="mt-8 space-y-5 text-emerald-100 text-lg">
+        <p>AI Trust Score</p>
+        <p>Fake Review Detection</p>
+        <p>Price Comparison</p>
+        <p>AI Closet</p>
+        <p>Compare Products</p>
+        <p>AI Fitting (Beta)</p>
+      </div>
+    </div>
 
-          </div>
+    {/* COMPANY */}
+    <div>
+      <h3 className="text-3xl font-semibold">
+        Company
+      </h3>
 
+      <div className="mt-8 space-y-5 text-emerald-100 text-lg">
+        <p>About VURA</p>
+        <p>Privacy Policy</p>
+        <p>Terms of Service</p>
+        <p>Contact</p>
+        <p>Careers</p>
+      </div>
+    </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+    {/* GET STARTED */}
+    <div>
+      <h3 className="text-3xl font-semibold">
+        Get Started
+      </h3>
 
-            {["🎧", "👟", "⌚", "📷"].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-[28px] p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-100"
-              >
+      <p className="mt-8 text-emerald-100 text-xl leading-relaxed">
+        Start shopping smarter with AI-powered
+        marketplace intelligence.
+      </p>
 
-                <div className="w-full h-[220px] rounded-[24px] bg-[#f2f3ee] flex items-center justify-center text-7xl">
-                  {item}
-                </div>
+      <div className="mt-10 space-y-4">
 
-                <div className="mt-6 flex items-center justify-between">
+        <button className="w-full rounded-full bg-white text-[#123524] px-8 py-4 font-semibold hover:scale-105 transition">
+          Try VURA Beta
+        </button>
 
-                  <div>
-                    <h3 className="font-semibold text-lg text-[#111827]">
-                      Smart Product
-                    </h3>
+        <button className="w-full rounded-full border border-emerald-300 text-white px-8 py-4 font-semibold hover:bg-white hover:text-[#123524] transition">
+          Shopee Affiliate
+        </button>
 
-                    <p className="text-zinc-400 text-sm mt-1">
-                      Verified by VURA
-                    </p>
-                  </div>
+        <button className="w-full rounded-full border border-emerald-300 text-white px-8 py-4 font-semibold hover:bg-white hover:text-[#123524] transition">
+          Lazada Affiliate
+        </button>
 
-                  <div className="bg-[#e8f3e3] text-[#36553f] px-3 py-1 rounded-full text-sm font-semibold">
-                    92
-                  </div>
+      </div>
+    </div>
+  </div>
 
-                </div>
+  {/* BOTTOM */}
+  <div className="mt-20 border-t border-emerald-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
 
-              </div>
-            ))}
+    <p className="text-emerald-100">
+      © 2026 VURA AI. All rights reserved.
+    </p>
 
-          </div>
-
-        </div>
-
-      </section>
-
+    <div className="flex items-center gap-8 text-emerald-100">
+  <p>Facebook</p>
+  <p>Instagram</p>
+  <p>Twitter</p>
+  <p>TikTok</p>
+  <p>LinkedIn</p>
+</div>
+  </div>
+</footer>
     </main>
   )
 }
