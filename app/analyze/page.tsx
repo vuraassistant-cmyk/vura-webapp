@@ -5,8 +5,14 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import Navbar from "../components/Navbar"
-
+import { Suspense } from "react"
 export default function AnalyzePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AnalyzeContent />
+    </Suspense>
+  )
+}function AnalyzeContent() {
   const searchParams = useSearchParams()
 
   const product = searchParams.get("product")
