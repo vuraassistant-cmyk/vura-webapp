@@ -49,14 +49,14 @@ export default function ComparePage() {
       : rightProduct
 
   return (
-    <main className="min-h-screen bg-[#f6f7f2] text-[#111827]">
+    <main className="min-h-screen bg-[#efe7dc] text-[#2b2b2b]">
       <Navbar />
 
       <section className="px-6 md:px-16 pt-32 pb-20">
 
         {/* HEADER */}
         <div className="text-center max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.3em] text-[#8a9b6d] text-sm">
+          <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
             AI Product Comparison
           </p>
 
@@ -82,7 +82,7 @@ export default function ComparePage() {
                 ) || products[0]
               )
             }
-            className="rounded-full border border-[#d0d5dd] bg-white px-6 py-5 text-lg"
+            className="rounded-full border border-[#d0d5dd] bg-[#efe7dc] px-6 py-5 text-lg"
           >
             {products.map((product, index) => (
               <option key={index}>
@@ -100,7 +100,7 @@ export default function ComparePage() {
                 ) || products[1]
               )
             }
-            className="rounded-full border border-[#d0d5dd] bg-white px-6 py-5 text-lg"
+            className="rounded-full border border-[#d0d5dd] bg-[#efe7dc] px-6 py-5 text-lg"
           >
             {products.map((product, index) => (
               <option key={index}>
@@ -111,8 +111,8 @@ export default function ComparePage() {
         </div>
 
         {/* AI VERDICT */}
-        <div className="mt-16 rounded-[40px] bg-[#123524] text-white p-10 text-center">
-          <p className="uppercase tracking-[0.3em] text-sm text-emerald-200">
+        <div className="mt-16 rounded-[40px] bg-[#8b6f47] text-white p-10 text-center">
+          <p className="uppercase tracking-[0.3em] text-sm text-white-200">
             VURA AI Comparison Verdict
           </p>
 
@@ -120,7 +120,7 @@ export default function ComparePage() {
             {betterProduct.name} Wins
           </h2>
 
-          <p className="mt-6 text-xl text-emerald-100 leading-relaxed max-w-3xl mx-auto">
+          <p className="mt-6 text-xl text-white leading-relaxed max-w-3xl mx-auto">
             VURA recommends {betterProduct.name} because it has a
             higher trust score, lower marketplace risk, and stronger
             seller reliability indicators.
@@ -131,7 +131,7 @@ export default function ComparePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-16">
 
           {/* LEFT PRODUCT */}
-          <div className="rounded-[40px] bg-white p-8 shadow-sm">
+          <div className="rounded-[40px] bg-[#efe7dc] p-8 shadow-md">
             <div className="relative rounded-[30px] overflow-hidden">
               <Image
                 src={leftProduct.image}
@@ -150,12 +150,12 @@ export default function ComparePage() {
               {leftProduct.price}
             </p>
 
-            <div className="mt-10 rounded-[30px] bg-[#f6f7f2] p-8">
-              <p className="uppercase tracking-[0.3em] text-[#8a9b6d] text-sm">
+            <div className="mt-10 rounded-[30px] bg-[#efe7dc] p-8">
+              <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
                 Trust Score
               </p>
 
-              <h3 className="text-7xl font-bold text-[#123524] mt-4">
+              <h3 className="text-7xl font-bold text-[#8b6f47] mt-4">
                 {leftProduct.trust}
               </h3>
 
@@ -163,13 +163,13 @@ export default function ComparePage() {
                 {leftProduct.recommendation}
               </p>
 
-              <p className="mt-2 text-[#8a9b6d]">
+              <p className="mt-2 text-[#b08968]">
                 Risk: {leftProduct.risk}
               </p>
             </div>
 
-            <div className="mt-8 rounded-[30px] bg-[#123524] text-white p-8">
-              <p className="uppercase tracking-[0.3em] text-sm text-emerald-200">
+            <div className="mt-8 rounded-[30px] bg-[#8b6f47] text-white p-8">
+              <p className="uppercase tracking-[0.3em] text-sm text-white-200">
                 AI Verdict
               </p>
 
@@ -180,7 +180,7 @@ export default function ComparePage() {
           </div>
 
           {/* RIGHT PRODUCT */}
-          <div className="rounded-[40px] bg-white p-8 shadow-sm">
+          <div className="rounded-[40px] bg-[#efe7dc] p-8 shadow-md">
             <div className="relative rounded-[30px] overflow-hidden">
               <Image
                 src={rightProduct.image}
@@ -199,12 +199,12 @@ export default function ComparePage() {
               {rightProduct.price}
             </p>
 
-            <div className="mt-10 rounded-[30px] bg-[#f6f7f2] p-8">
-              <p className="uppercase tracking-[0.3em] text-[#8a9b6d] text-sm">
+            <div className="mt-10 rounded-[30px] bg[#f6f1eb]] p-8">
+              <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
                 Trust Score
               </p>
 
-              <h3 className="text-7xl font-bold text-[#123524] mt-4">
+              <h3 className="text-7xl font-bold text-[#8b6f47] mt-4">
                 {rightProduct.trust}
               </h3>
 
@@ -212,13 +212,13 @@ export default function ComparePage() {
                 {rightProduct.recommendation}
               </p>
 
-              <p className="mt-2 text-[#8a9b6d]">
+              <p className="mt-2 text-[#b08968]">
                 Risk: {rightProduct.risk}
               </p>
             </div>
 
-            <div className="mt-8 rounded-[30px] bg-[#123524] text-white p-8">
-              <p className="uppercase tracking-[0.3em] text-sm text-emerald-200">
+            <div className="mt-8 rounded-[30px] bg-[#8b6f47] text-white p-8">
+              <p className="uppercase tracking-[0.3em] text-sm text-white-200">
                 AI Verdict
               </p>
 

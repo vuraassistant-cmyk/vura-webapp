@@ -5,22 +5,118 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import Navbar from "./components/Navbar"
-
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa"
 export default function Home() {
   const [productLink, setProductLink] = useState("")
 
   const handleAnalyze = () => {
-    if (productLink.toLowerCase().includes("watch")) {
-      window.location.href = "/analyze?product=watch"
-    } else if (productLink.toLowerCase().includes("shoe")) {
-      window.location.href = "/analyze?product=shoe"
-    } else {
-      window.location.href = "/analyze?product=bag"
-    }
+
+  const input =
+    productLink.toLowerCase()
+
+  // ELECTRONICS
+  if (
+    input.includes("electronics") ||
+    input.includes("iphone") ||
+    input.includes("samsung") ||
+    input.includes("laptop") ||
+    input.includes("camera") ||
+    input.includes("headphone")
+  ) {
+
+    window.location.href =
+  "/analyze?product=electronics"
+
   }
 
-  return (
-    <main className="min-h-screen bg-[#f6f7f2] text-[#111827] overflow-hidden">
+  // FASHION
+  else if (
+    input.includes("shoe") ||
+input.includes("nike") ||
+input.includes("shirt") ||
+input.includes("fashion") ||
+input.includes("dress") ||
+input.includes("heels") ||
+input.includes("clothes") ||
+input.includes("outfit")
+  ) {
+
+    window.location.href =
+      "/analyze?product=shoe"
+
+  }
+
+  // HOME / APPLIANCE
+  else if (
+    input.includes("home") ||
+    input.includes("chair") ||
+    input.includes("table") ||
+    input.includes("air fryer") ||
+    input.includes("appliance")
+  ) {
+
+    window.location.href =
+    "/analyze?product=home"
+
+    }
+// BABY
+else if (
+  input.includes("baby") ||
+  input.includes("diaper") ||
+  input.includes("milk") ||
+  input.includes("stroller") ||
+  input.includes("formula")
+) {
+
+  window.location.href =
+    "/analyze?product=baby"
+
+}
+// BEAUTY
+else if (
+  input.includes("beauty") ||
+  input.includes("skincare") ||
+  input.includes("makeup") ||
+  input.includes("lipstick")
+) {
+
+  window.location.href =
+    "/analyze?product=beauty"
+
+}
+// GAMING
+else if (
+  input.includes("gaming") ||
+  input.includes("pc") ||
+  input.includes("keyboard") ||
+  input.includes("mouse") ||
+  input.includes("headset")
+) {
+
+  window.location.href =
+    "/analyze?product=gaming"
+
+}
+// BAGS
+else if (
+  input.includes("bag") ||
+  input.includes("tote") ||
+  input.includes("handbag")
+) {
+  window.location.href =
+    "/analyze?product=bag"
+}
+  // DEFAULT
+  else {
+
+    window.location.href =
+      "/analyze?product=shoe"
+
+  }
+}
+
+return (
+    <main className="min-h-screen bg-[#efe7dc] text-[#2b2b2b] overflow-hidden">
       <Navbar />
 
       {/* HERO SECTION */}
@@ -33,37 +129,35 @@ export default function Home() {
         >
           {/* LEFT SIDE */}
           <div>
-            <div className="inline-flex items-center rounded-full bg-[#eef2e3] px-6 py-3 text-sm tracking-[0.3em] uppercase text-[#8a9b6d]">
+            <div className="inline-flex items-center rounded-full bg-[#eef2e3] px-6 py-3 text-sm tracking-[0.3em] uppercase text-[#b08968]">
               AI Shopping Assistant
             </div>
-
-            <h1 className="text-5xl md:text-7xl font-serif leading-[0.95] mt-8 text-[#0f172a]">
-              Shop smarter.
-              <br />
-              Avoid fake hype.
-              <br />
-              <span className="italic text-[#8a9b6d]">
-                Know before you buy.
-              </span>
-            </h1>
+<h1 className="text-6xl font-serif text-[#0f172a] leading-tight">
+  Shop Smarter.
+  <br />
+  Avoid Risky Purchases.
+</h1>
+            
+            
 
             <p className="mt-10 text-xl leading-relaxed text-[#667085] max-w-2xl">
-              VURA analyzes products and sellers instantly so you can shop with confidence across Shopee, Lazada, TikTok Shop, Zalora, and more.
-            </p>
+  VURA analyzes trust signals, seller credibility,
+  pricing, and marketplace risk before you buy.
+</p>
 
             {/* INPUT */}
             <div className="mt-12 flex flex-col md:flex-row gap-4">
               <input
                 type="text"
-                placeholder="Type watch, shoe, or bag..."
+                placeholder="Paste a marketplace product link..."
                 value={productLink}
                 onChange={(e) => setProductLink(e.target.value)}
-                className="flex-1 rounded-full border border-[#d0d5dd] bg-white px-6 py-5 text-lg outline-none"
+                className="flex-1 rounded-full border border-[#d0d5dd] bg-[#efe7dc] px-6 py-5 text-lg outline-none"
               />
 
               <button
                 onClick={handleAnalyze}
-                className="rounded-full bg-[#123524] px-10 py-5 text-lg font-semibold text-white transition hover:scale-105"
+                className="rounded-full bg-[#8b6f47] px-10 py-5 text-lg font-semibold text-white transition hover:scale-105"
               >
                 Analyze Product
               </button>
@@ -81,7 +175,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 rounded-[40px] bg-[#dfe8d5] blur-3xl opacity-60" />
 
-            <div className="relative rounded-[40px] bg-white p-6 shadow-2xl">
+            <div className="relative rounded-[40px] bg-[#efe7dc] p-6 shadow-2xl">
               <Image
                 src="/images/bag.png"
                 alt="Luxury Bag"
@@ -92,46 +186,141 @@ export default function Home() {
               />
             </div>
           </motion.div>
-        </motion.div>
-      </section>
+</motion.div>
+</section>
 
-      {/* FEATURES */}
-      <section className="px-6 md:px-16 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="rounded-3xl bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold">
-              AI Trust Score
-            </h3>
+{/* HOW IT WORKS */}
+<section className="mt-32 px-6 md:px-16">
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    How It Works
+  </p>
 
-            <p className="mt-4 text-[#667085] text-lg">
-              Analyze seller credibility and fake review patterns instantly.
-            </p>
-          </div>
+  <h2 className="mt-4 text-5xl font-serif text-[#0f172a]">
+    AI-powered shopping in 3 steps
+  </h2>
 
-          <div className="rounded-3xl bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold">
-              Marketplace Comparison
-            </h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
 
-            <p className="mt-4 text-[#667085] text-lg">
-              Compare prices across Shopee, Lazada, TikTok Shop, and more.
-            </p>
-          </div>
+    <div className="rounded-[35px] bg-white p-8 shadow-md">
+      <h3 className="text-3xl font-serif">
+        Analyze
+      </h3>
+      <p className="mt-4 text-[#667085]">
+        Paste a product link or choose a product.
+      </p>
+    </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold">
-              AI Closet
-            </h3>
+    <div className="rounded-[35px] bg-white p-8 shadow-md">
+      <h3 className="text-3xl font-serif">
+        AI Review
+      </h3>
+      <p className="mt-4 text-[#667085]">
+        VURA checks reviews, pricing, trust signals,
+        and marketplace reliability.
+      </p>
+    </div>
 
-            <p className="mt-4 text-[#667085] text-lg">
-              Save your favorite products and organize smarter shopping decisions.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="rounded-[35px] bg-white p-8 shadow-md">
+      <h3 className="text-3xl font-serif">
+        Buy With Confidence
+      </h3>
+      <p className="mt-4 text-[#667085]">
+        Receive a trust score and safer alternatives.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section className="px-6 md:px-16 pt-16 pb-12">
+  <div className="max-w-6xl mx-auto">
+
+    <h2 className="text-5xl font-serif text-center text-[#2b2b2b]">
+      Why VURA?
+    </h2>
+
+    <p className="text-center text-[#667085] mt-6 text-lg">
+      Marketplace intelligence designed to help you buy with confidence.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-8 mt-16">
+
+      <div className="bg-white rounded-3xl p-8 shadow-sm">
+        <h3 className="text-2xl font-semibold text-[#2b2b2b]">
+          AI Trust Score
+        </h3>
+
+        <p className="mt-4 text-[#667085]">
+          Know if a product is genuinely trusted before you spend your money.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-3xl p-8 shadow-sm">
+        <h3 className="text-2xl font-semibold text-[#2b2b2b]">
+          Fake Review Detection
+        </h3>
+
+        <p className="mt-4 text-[#667085]">
+          Spot suspicious review patterns and avoid misleading products.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-3xl p-8 shadow-sm">
+        <h3 className="text-2xl font-semibold text-[#2b2b2b]">
+          Price Intelligence
+        </h3>
+
+        <p className="mt-4 text-[#667085]">
+          Understand pricing and compare value across marketplaces.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+    
+<section className="px-6 md:px-16 py-20">
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    Supported Platforms
+  </p>
+
+  <h2 className="mt-4 text-5xl font-serif text-[#0f172a]">
+    Analyze products across major marketplaces
+  </h2>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+    
+    <div className="bg-white rounded-3xl p-8 text-center shadow-sm">
+      <p className="text-2xl font-semibold text-[#0f172a]">
+        Shopee
+      </p>
+    </div>
+
+    <div className="bg-white rounded-3xl p-8 text-center shadow-sm">
+      <p className="text-2xl font-semibold text-[#0f172a]">
+        Lazada
+      </p>
+    </div>
+
+    <div className="bg-white rounded-3xl p-8 text-center shadow-sm">
+      <p className="text-2xl font-semibold text-[#0f172a]">
+        TikTok Shop
+      </p>
+    </div>
+
+    <div className="bg-white rounded-3xl p-8 text-center shadow-sm">
+      <p className="text-2xl font-semibold text-[#0f172a]">
+        Zalora
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* FOOTER */}
-      <footer className="mt-32 bg-gradient-to-r from-[#022c22] to-[#064e3b] text-white rounded-t-[50px] px-8 md:px-16 py-20">
+      <footer className="mt-32 bg-gradient-to-r from-[#8b6f47] to-[#b08968] text-white rounded-t-[50px] px-8 md:px-16 py-20">
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
 
@@ -141,15 +330,18 @@ export default function Home() {
         vura♡
       </h2>
 
-      <p className="mt-8 text-emerald-100 text-xl leading-relaxed">
+      <p className="mt-8 text-[#8b6f47]-100 text-xl leading-relaxed">
         AI-powered shopping intelligence
         for smarter online purchases.
       </p>
 
       <div className="mt-10">
-        <button className="rounded-full bg-white text-[#123524] px-8 py-4 font-semibold hover:scale-105 transition">
-          Join Waitlist
-        </button>
+        <Link
+  href="/waitlist"
+  className="inline-block rounded-full bg-[#fef7dc] text-[#8b6f47] px-8 py-4"
+>
+  Try VURA Beta
+</Link>
       </div>
     </div>
 
@@ -159,13 +351,13 @@ export default function Home() {
         Product
       </h3>
 
-      <div className="mt-8 space-y-5 text-emerald-100 text-lg">
+      <div className="mt-8 space-y-5 text-white text-lg">
         <p>AI Trust Score</p>
-        <p>Fake Review Detection</p>
+        <p>Marketplace Intelligence</p>
         <p>Price Comparison</p>
-        <p>AI Closet</p>
-        <p>Compare Products</p>
-        <p>AI Fitting (Beta)</p>
+        <p>Fake Review Detection</p>
+        <p>Price Intelligence</p>
+        
       </div>
     </div>
 
@@ -175,12 +367,14 @@ export default function Home() {
         Company
       </h3>
 
-      <div className="mt-8 space-y-5 text-emerald-100 text-lg">
-        <p>About VURA</p>
-        <p>Privacy Policy</p>
-        <p>Terms of Service</p>
-        <p>Contact</p>
-        <p>Careers</p>
+      <div className="mt-8 flex flex-col gap-5 text-white text-lg">
+        <Link href="/about">About VURA</Link>
+
+<Link href="/privacy">Privacy Policy</Link>
+
+<Link href="/terms">Terms of Service</Link>
+
+<Link href="/contact">Contact</Link>
       </div>
     </div>
 
@@ -190,42 +384,58 @@ export default function Home() {
         Get Started
       </h3>
 
-      <p className="mt-8 text-emerald-100 text-xl leading-relaxed">
+      <p className="mt-8 text-white text-xl leading-relaxed">
         Start shopping smarter with AI-powered
         marketplace intelligence.
       </p>
 
       <div className="mt-10 space-y-4">
 
-        <button className="w-full rounded-full bg-white text-[#123524] px-8 py-4 font-semibold hover:scale-105 transition">
-          Try VURA Beta
+        <button className="w-full rounded-full bg-[#efe7dc] text-[#8b6f47] px-8 py-4 font-semibold hover:scale-105 transition">
+          Join Waitlist
         </button>
 
-        <button className="w-full rounded-full border border-emerald-300 text-white px-8 py-4 font-semibold hover:bg-white hover:text-[#123524] transition">
-          Shopee Affiliate
-        </button>
-
-        <button className="w-full rounded-full border border-emerald-300 text-white px-8 py-4 font-semibold hover:bg-white hover:text-[#123524] transition">
-          Lazada Affiliate
-        </button>
 
       </div>
     </div>
   </div>
 
   {/* BOTTOM */}
-  <div className="mt-20 border-t border-emerald-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  <div className="mt-20 border-t border-white-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
 
-    <p className="text-emerald-100">
+    <p className="text-white">
       © 2026 VURA AI. All rights reserved.
     </p>
 
-    <div className="flex items-center gap-8 text-emerald-100">
-  <p>Facebook</p>
-  <p>Instagram</p>
-  <p>Twitter</p>
-  <p>TikTok</p>
-  <p>LinkedIn</p>
+    <div className="flex items-center gap-8 text-2xl">
+
+  <a
+    href="https://facebook.com/YOURPAGE"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:opacity-80"
+  >
+    <FaFacebookF />
+  </a>
+
+  <a
+    href="https://instagram.com/YOURUSERNAME"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:opacity-80"
+  >
+    <FaInstagram />
+  </a>
+
+  <a
+    href="https://tiktok.com/@YOURUSERNAME"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:opacity-80"
+  >
+    <FaTiktok />
+  </a>
+
 </div>
   </div>
 </footer>
