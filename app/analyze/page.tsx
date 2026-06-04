@@ -29,7 +29,7 @@ sourceMarketplace: "Shopee",
       recommendation:
         "Strong seller reputation, authentic review signals, and competitive marketplace pricing.",
       risk: "Low",
-      intelligence: "✅ Safe To Buy",
+      intelligence: "★ Safe To Buy",
 
       pros: [
         "Strong verified reviews",
