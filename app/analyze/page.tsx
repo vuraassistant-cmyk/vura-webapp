@@ -731,22 +731,8 @@ sourceMarketplace: "Shopee",
 
           </div>
       </section>
-      <div className="mt-16 text-center">
-  <h3 className="text-3xl font-serif text-[#0f172a]">
-    Want to analyze another product?
-  </h3>
-
-  <p className="mt-4 text-[#667085]">
-    Paste another marketplace product and get a new VURA Trust Score.
-  </p>
-
-  <Link
-    href="/analyze"
-    className="inline-block mt-8 rounded-full bg-[#8b6f47] text-white px-8 py-4 font-semibold"
-  >
-    Analyze New Product
-  </Link>
-</div>
+      
+VURA Beta • Shopping Intelligence for Smarter Purchases
     </main>
   )
 }
