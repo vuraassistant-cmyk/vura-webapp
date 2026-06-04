@@ -55,6 +55,7 @@ sourceMarketplace: "Shopee",
       image: "/images/shoe.png",
       category: "Fashion",
       price: "₱4,990",
+       sourceMarketplace: "Zalora",
       trust: 89,
       recommendation:
         "Popular lifestyle sneaker with high buyer satisfaction",
@@ -84,6 +85,7 @@ sourceMarketplace: "Shopee",
       image: "/images/watch.png",
       category: "Home & Appliances",
       price: "₱7,990",
+      sourceMarketplace: "Shopee",
       trust: 87,
       recommendation:
         "Reliable home appliance with strong customer satisfaction and competitive marketplace pricing",
@@ -113,6 +115,7 @@ sourceMarketplace: "Shopee",
       image: "/images/bag.png",
       category: "Baby Products",
       price: "₱1,290",
+      sourceMarketplace: "Lazada",
       trust: 95,
       recommendation:
         "Highly trusted baby essential with strong parent reviews",
@@ -141,6 +144,7 @@ sourceMarketplace: "Shopee",
       image: "/images/bag.png",
       category: "Beauty & Skincare",
       price: "₱990",
+      sourceMarketplace: "Zalora",
       trust: 84,
       recommendation:
         "Trending beauty item with verified positive feedback",
@@ -169,6 +173,7 @@ sourceMarketplace: "Shopee",
       image: "/images/headphones.png",
       category: "Gaming",
       price: "₱5,490",
+       sourceMarketplace: "Shopee",
       trust: 88,
       recommendation:
         "Top-rated gaming accessory with reliable performance",
@@ -197,6 +202,7 @@ sourceMarketplace: "Shopee",
       image: "/images/bag.png",
       category: "Fashion Bags",
       price: "₱4,490",
+      sourceMarketplace: "Zalora",
       trust: 84,
 
       recommendation:
@@ -332,7 +338,9 @@ sourceMarketplace: "Shopee",
               {currentProduct.price}
             </p>
 <p className="mt-3 text-lg text-[#667085]">
-  Source Marketplace: {currentProduct.sourceMarketplace}
+  <p className="mt-3 text-lg text-[#667085]">
+  Source Marketplace: {currentProduct.sourceMarketplace || "Shopee"}
+</p>
 </p>
             {/* TRUST SCORE */}
             <div className="mt-14 rounded-[40px] bg-[#efe7dc] p-10 shadow-lg">
