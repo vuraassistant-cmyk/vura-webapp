@@ -1,46 +1,49 @@
-import Navbar from "../components/Navbar"
+import Link from "next/link";
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#fef7dc] text-[#2b2b2b]">
-      <Navbar />
+    <main className="min-h-screen bg-[#efe7dc] px-6 py-20">
+      <div className="max-w-4xl mx-auto">
 
-      <section className="max-w-4xl mx-auto px-8 pt-28 pb-24">
+        <Link
+          href="/"
+          className="text-[#8b6f47] font-medium"
+        >
+          ← Back to Home
+        </Link>
 
-  <h1 className="text-5xl md:text-6xl font-serif">
-    Terms of Service
-  </h1>
+        <p className="mt-10 uppercase tracking-[0.3em] text-[#b08968] text-sm">
+          TERMS OF SERVICE
+        </p>
 
-  <div className="w-32 h-[1px] bg-[#b08f68] mt-6 mb-12"></div>
+        <h1 className="mt-4 text-5xl font-serif text-[#0f172a]">
+          Terms of Service
+        </h1>
 
-  <div className="space-y-8 text-xl text-[#667085] leading-relaxed">
+        <div className="mt-10 bg-white rounded-[30px] p-10 shadow-md">
 
-    <p>
-      By using VURA, you agree to use the platform responsibly and
-      understand that marketplace information is provided for guidance
-      purposes only.
-    </p>
+          <p className="text-[#667085] leading-relaxed">
+            By using VURA, you agree to these Terms of Service.
+          </p>
 
-    <p>
-      VURA provides AI-powered shopping intelligence, trust scores,
-      marketplace comparisons, and product analysis tools to help users
-      make informed purchasing decisions.
-    </p>
+          <p className="mt-6 text-[#667085] leading-relaxed">
+            VURA provides informational shopping intelligence only.
+            Our analysis is intended to assist shoppers but should not
+            be considered financial, legal, or purchasing advice.
+          </p>
 
-    <p>
-      While VURA strives to provide accurate information, users should
-      independently verify product details, pricing, seller information,
-      and marketplace policies before making purchases.
-    </p>
+          <p className="mt-6 text-[#667085] leading-relaxed">
+            Users remain responsible for their own purchasing decisions.
+          </p>
 
-    <p>
-      VURA is not responsible for transactions, shipping, returns,
-      warranties, or disputes between users and third-party marketplaces.
-    </p>
+          <p className="mt-6 text-[#667085] leading-relaxed">
+            VURA does not guarantee the accuracy, completeness, or
+            availability of marketplace data.
+          </p>
 
-  </div>
+        </div>
 
-</section>
+      </div>
     </main>
-  )
+  );
 }

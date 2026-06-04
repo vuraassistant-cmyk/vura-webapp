@@ -24,11 +24,12 @@ export default function AnalyzePage() {
       image: "/images/headphones.png",
       category: "Electronics",
       price: "₱12,990",
+sourceMarketplace: "Shopee",
       trust: 91,
       recommendation:
         "Strong seller reputation, authentic review signals, and competitive marketplace pricing.",
       risk: "Low",
-      intelligence: "Recommended Purchase",
+      intelligence: "✅ Safe To Buy",
 
       pros: [
         "Strong verified reviews",
@@ -316,7 +317,9 @@ export default function AnalyzePage() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-          >
+          ><div className="inline-block mb-6 px-4 py-2 rounded-full bg-[#8b6f47] text-white text-sm font-semibold">
+  BETA DEMO
+</div>
             <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
               AI Product Analysis
             </p>
@@ -328,7 +331,9 @@ export default function AnalyzePage() {
             <p className="mt-6 text-3xl text-[#667085]">
               {currentProduct.price}
             </p>
-
+<p className="mt-3 text-lg text-[#667085]">
+  Source Marketplace: {currentProduct.sourceMarketplace}
+</p>
             {/* TRUST SCORE */}
             <div className="mt-14 rounded-[40px] bg-[#efe7dc] p-10 shadow-lg">
               <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
@@ -347,7 +352,9 @@ export default function AnalyzePage() {
                 <p className="text-sm text-[#667085]">
                   Trust Score • {currentProduct.trust}/100
                 </p>
-
+<p className="text-sm text-[#667085] mt-2">
+  Analyzed on June 3, 2026
+</p>
                 <p className="mt-6 max-w-lg mx-auto text-xl text-[#667085] leading-relaxed">
                   {currentProduct.recommendation}
                 </p>
@@ -716,6 +723,22 @@ export default function AnalyzePage() {
 
           </div>
       </section>
+      <div className="mt-16 text-center">
+  <h3 className="text-3xl font-serif text-[#0f172a]">
+    Want to analyze another product?
+  </h3>
+
+  <p className="mt-4 text-[#667085]">
+    Paste another marketplace product and get a new VURA Trust Score.
+  </p>
+
+  <Link
+    href="/analyze"
+    className="inline-block mt-8 rounded-full bg-[#8b6f47] text-white px-8 py-4 font-semibold"
+  >
+    Analyze New Product
+  </Link>
+</div>
     </main>
   )
 }

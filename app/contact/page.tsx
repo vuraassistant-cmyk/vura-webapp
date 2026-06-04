@@ -1,53 +1,45 @@
-import Navbar from "../components/Navbar"
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#fef7dc] text-[#2b2b2b]">
-      <Navbar />
+    <main className="min-h-screen bg-[#efe7dc] px-6 py-20">
+      <div className="max-w-4xl mx-auto">
 
-      <section className="max-w-4xl mx-auto px-8 pt-28 pb-24">
+        <Link
+          href="/"
+          className="text-[#8b6f47] font-medium"
+        >
+          ← Back to Home
+        </Link>
 
-  <h1 className="text-5xl md:text-6xl font-serif">
-    Contact VURA
-  </h1>
+        <p className="mt-10 uppercase tracking-[0.3em] text-[#b08968] text-sm">
+          CONTACT
+        </p>
 
-  <div className="w-32 h-[1px] bg-[#b08f68] mt-6 mb-12"></div>
+        <h1 className="mt-4 text-5xl font-serif text-[#0f172a]">
+          Get in Touch
+        </h1>
 
-  <div className="space-y-10">
+        <div className="mt-10 bg-white rounded-[30px] p-10 shadow-md">
 
-    <div>
-      <p className="uppercase tracking-[0.2em] text-sm text-[#b08f68]">
-        Email
-      </p>
+          <p className="text-[#667085] text-lg leading-relaxed">
+            We'd love to hear from you.
+          </p>
 
-      <p className="mt-3 text-2xl text-[#2b2b2b]">
-        hello@vura.ai
-      </p>
-    </div>
+          <p className="mt-6 text-[#667085]">
+            Email us directly:
+          </p>
 
-    <div>
-      <p className="uppercase tracking-[0.2em] text-sm text-[#b08f68]">
-        Response Time
-      </p>
+          <a
+            href="mailto:vura.assistant@gmail.com"
+            className="mt-3 inline-block text-[#8b6f47] font-semibold text-lg"
+          >
+            vura.assistant@gmail.com
+          </a>
 
-      <p className="mt-3 text-xl text-[#667085]">
-        Within 24–48 hours
-      </p>
-    </div>
+        </div>
 
-    <div>
-      <p className="uppercase tracking-[0.2em] text-sm text-[#b08f68]">
-        Location
-      </p>
-
-      <p className="mt-3 text-xl text-[#667085]">
-        Philippines
-      </p>
-    </div>
-
-  </div>
-
-</section>
+      </div>
     </main>
-  )
+  );
 }

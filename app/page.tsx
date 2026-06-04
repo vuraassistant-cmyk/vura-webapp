@@ -117,6 +117,9 @@ else if (
 
 return (
     <main className="min-h-screen bg-[#efe7dc] text-[#2b2b2b] overflow-hidden">
+      <div className="bg-[#8b6f47] text-white text-center py-3 text-sm font-medium">
+      🚀 VURA Beta launches June 8. Join the waitlist today.
+    </div>
       <Navbar />
 
       {/* HERO SECTION */}
@@ -318,7 +321,120 @@ return (
 
   </div>
 </section>
+<section className="px-6 md:px-16 py-24">
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm text-center">
+    MARKETPLACE COVERAGE
+  </p>
 
+  <h2 className="mt-4 text-5xl font-serif text-center text-[#0f172a]">
+    Trusted Across Major Marketplaces
+  </h2>
+
+  <p className="mt-6 text-center text-xl text-[#667085] max-w-3xl mx-auto">
+    Analyze products from thousands of brands and sellers across leading online marketplaces.
+  </p>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+    <div className="bg-white rounded-[30px] p-8 text-center shadow-md">
+      <h3 className="text-4xl font-bold text-[#8b6f47]">4</h3>
+      <p className="mt-2 text-[#667085]">Marketplaces</p>
+    </div>
+
+    <div className="bg-white rounded-[30px] p-8 text-center shadow-md">
+      <h3 className="text-4xl font-bold text-[#8b6f47]">50,000+</h3>
+      <p className="mt-2 text-[#667085]">Sellers & Stores</p>
+    </div>
+
+    <div className="bg-white rounded-[30px] p-8 text-center shadow-md">
+      <h3 className="text-4xl font-bold text-[#8b6f47]">100,000+</h3>
+      <p className="mt-2 text-[#667085]">Brands</p>
+    </div>
+
+    <div className="bg-white rounded-[30px] p-8 text-center shadow-md">
+      <h3 className="text-4xl font-bold text-[#8b6f47]">Millions+</h3>
+      <p className="mt-2 text-[#667085]">Products</p>
+    </div>
+  </div>
+</section>
+{/* FAQ */}
+
+<section className="px-6 md:px-16 py-24">
+
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm text-center">
+    FAQ
+  </p>
+
+  <h2 className="mt-4 text-5xl font-serif text-center text-[#0f172a]">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="mt-16 max-w-4xl mx-auto space-y-6">
+
+    <div className="bg-white rounded-[30px] p-8 shadow-md">
+      <h3 className="text-2xl font-serif">
+        What is VURA?
+      </h3>
+      <p className="mt-3 text-[#667085]">
+        VURA is an AI-powered shopping intelligence platform that helps
+        shoppers make smarter purchasing decisions before buying online.
+      </p>
+    </div>
+
+    <div className="bg-white rounded-[30px] p-8 shadow-md">
+      <h3 className="text-2xl font-serif">
+        Which marketplaces are supported?
+      </h3>
+      <p className="mt-3 text-[#667085]">
+        VURA currently supports Shopee, Lazada, TikTok Shop, and Zalora.
+      </p>
+    </div>
+
+    <div className="bg-white rounded-[30px] p-8 shadow-md">
+      <h3 className="text-2xl font-serif">
+        Is VURA free?
+      </h3>
+      <p className="mt-3 text-[#667085]">
+        Yes. The beta version of VURA is completely free to use.
+      </p>
+    </div>
+
+    <div className="bg-white rounded-[30px] p-8 shadow-md">
+      <h3 className="text-2xl font-serif">
+        When will VURA launch?
+      </h3>
+      <p className="mt-3 text-[#667085]">
+        VURA Beta launches on June 8, 2026.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+{/* FINAL CTA */}
+
+<section className="px-6 md:px-16 py-24 text-center">
+
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    EARLY ACCESS
+  </p>
+
+  <h2 className="mt-4 text-5xl font-serif text-[#0f172a]">
+    Be Among The First To Experience VURA
+  </h2>
+
+  <p className="mt-6 text-xl text-[#667085] max-w-2xl mx-auto">
+    Join the beta waitlist and get early access to AI-powered shopping
+    intelligence before the public launch.
+  </p>
+
+  <Link
+    href="/waitlist"
+    className="inline-block mt-10 rounded-full bg-[#8b6f47] text-white px-10 py-4 font-semibold hover:opacity-90"
+  >
+    Join The Waitlist
+  </Link>
+
+</section>
       {/* FOOTER */}
       <footer className="mt-32 bg-gradient-to-r from-[#8b6f47] to-[#b08968] text-white rounded-t-[50px] px-8 md:px-16 py-20">
 
@@ -391,9 +507,9 @@ return (
 
       <div className="mt-10 space-y-4">
 
-        <button className="w-full rounded-full bg-[#efe7dc] text-[#8b6f47] px-8 py-4 font-semibold hover:scale-105 transition">
-          Join Waitlist
-        </button>
+        <p className="mt-8 text-[#efe7dc] text-sm uppercase tracking-[0.2em]">
+  Launching June 8, 2026
+</p>
 
 
       </div>
