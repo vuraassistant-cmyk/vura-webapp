@@ -410,31 +410,7 @@ return (
   </div>
 
 </section>
-{/* FINAL CTA */}
 
-<section className="px-6 md:px-16 py-24 text-center">
-
-  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
-    EARLY ACCESS
-  </p>
-
-  <h2 className="mt-4 text-5xl font-serif text-[#0f172a]">
-    Be Among The First To Experience VURA
-  </h2>
-
-  <p className="mt-6 text-xl text-[#667085] max-w-2xl mx-auto">
-    Join the beta waitlist and get early access to AI-powered shopping
-    intelligence before the public launch.
-  </p>
-
-  <Link
-    href="/waitlist"
-    className="inline-block mt-10 rounded-full bg-[#8b6f47] text-white px-10 py-4 font-semibold hover:opacity-90"
-  >
-    Join The Waitlist
-  </Link>
-
-</section>
       {/* FOOTER */}
       <footer className="mt-32 bg-gradient-to-r from-[#8b6f47] to-[#b08968] text-white rounded-t-[50px] px-8 md:px-16 py-20">
 
@@ -508,7 +484,7 @@ return (
       <div className="mt-10 space-y-4">
 
         <p className="mt-8 text-[#efe7dc] text-sm uppercase tracking-[0.2em]">
-  Launching June 8, 2026
+  EARLY ACCESS AVAILABLE
 </p>
 
 

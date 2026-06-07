@@ -320,15 +320,17 @@ sourceMarketplace: "Shopee",
 
           {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          ><div className="inline-block mb-6 px-4 py-2 rounded-full bg-[#8b6f47] text-white text-sm font-semibold">
-  BETA DEMO
-</div>
-            <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
-              AI Product Analysis
-            </p>
+  initial={{ opacity: 0, x: -40 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="inline-block mb-6 px-4 py-2 rounded-full bg-[#8b6f47] text-white text-sm font-semibold">
+    BETA DEMO
+  </div>
+
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    AI Product Analysis
+  </p>
 
             <h1 className="text-5xl md:text-8xl font-serif mt-6 text-[#0f172a] leading-tight">
               {currentProduct.name}
@@ -338,10 +340,9 @@ sourceMarketplace: "Shopee",
               {currentProduct.price}
             </p>
 <p className="mt-3 text-lg text-[#667085]">
-  <p className="mt-3 text-lg text-[#667085]">
   Source Marketplace: {currentProduct.sourceMarketplace || "Shopee"}
 </p>
-</p>
+
             {/* TRUST SCORE */}
             <div className="mt-14 rounded-[40px] bg-[#efe7dc] p-10 shadow-lg">
               <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
@@ -389,8 +390,8 @@ sourceMarketplace: "Shopee",
 
 
             </div>
-          </motion.div>
-
+          
+</motion.div>
           {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
@@ -732,7 +733,7 @@ sourceMarketplace: "Shopee",
           </div>
       </section>
       
-VURA Beta • Shopping Intelligence for Smarter Purchases
+
     </main>
   )
 }
