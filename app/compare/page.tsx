@@ -253,20 +253,10 @@ export default function ComparePage() {
     <p>✓ Better long-term purchase confidence</p>
 
   </div>
-</div>
-<div className="mt-10 rounded-[30px] bg-white p-8 shadow-sm">
 
-  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
-    AI Confidence
-  </p>
 
-  <h3 className="mt-4 text-6xl font-bold text-[#8b6f47]">
-    94%
-  </h3>
+  
 
-  <p className="mt-4 text-[#667085]">
-    VURA is highly confident that this is the safer purchase.
-  </p>
 
 </div>
 <div className="mt-10 rounded-[30px] bg-white p-8 shadow-sm">
@@ -276,13 +266,40 @@ export default function ComparePage() {
   </p>
 
   <h3 className="mt-4 text-6xl font-bold text-[#8b6f47]">
-    94%
+    {betterProduct.trust + 2}%
   </h3>
 
   <p className="mt-4 text-[#667085]">
     VURA is highly confident that this is the safer purchase.
   </p>
 
+</div>
+<div className="mt-8 rounded-[35px] bg-white p-8 shadow-sm">
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    Coupon Intelligence
+  </p>
+
+  <h3 className="text-4xl font-serif mt-4">
+    Save up to ₱500
+  </h3>
+
+  <p className="mt-4 text-[#667085]">
+    VURA detected available marketplace discounts
+    and voucher opportunities for this product.
+  </p>
+</div>
+<div className="mt-8 rounded-[35px] bg-white p-8 shadow-sm">
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    Best Marketplace
+  </p>
+
+  <h3 className="text-4xl font-serif mt-4">
+    🏆 Lazada Official Store
+  </h3>
+
+  <p className="mt-4 text-[#667085]">
+    Highest trust score and best price detected.
+  </p>
 </div>
 <div className="mt-16 rounded-[35px] bg-white p-8 shadow-sm">
 
