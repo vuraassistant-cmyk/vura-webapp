@@ -54,21 +54,27 @@ export default function ComparePage() {
 
       <section className="px-6 md:px-16 pt-32 pb-20">
 
-        {/* HEADER */}
-        <div className="text-center max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
-            AI Product Comparison
-          </p>
+        {/* HERO */}
 
-          <h1 className="text-5xl md:text-7xl font-serif mt-6 text-[#0f172a]">
-            Compare products intelligently.
-          </h1>
+<div className="max-w-4xl mx-auto text-center">
 
-          <p className="mt-8 text-xl text-[#667085] leading-relaxed">
-            VURA compares trust scores, pricing, risks,
-            and marketplace intelligence instantly.
-          </p>
-        </div>
+  <p className="text-[15px] font-semibold uppercase tracking-[0.45em] text-[#b08968]">
+    AI COMPARE
+  </p>
+
+  <div className="mt-4 h-[3px] w-24 rounded-full bg-[#b08968] mx-auto" />
+
+  <h1 className="text-6xl md:text-7xl font-serif mt-8 text-[#0f172a]">
+    Compare Products Like An Expert
+  </h1>
+
+  <p className="mt-8 text-xl text-[#667085] max-w-3xl mx-auto leading-relaxed">
+    Let VURA analyze trust signals, marketplace risks,
+    pricing opportunities, coupons, and value before
+    you make a purchase.
+  </p>
+
+</div>
 
         {/* SELECTORS */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
@@ -199,7 +205,7 @@ export default function ComparePage() {
               {rightProduct.price}
             </p>
 
-            <div className="mt-10 rounded-[30px] bg[#f6f1eb]] p-8">
+            <div className="mt-10 rounded-[30px] bg-[#f6f1eb] p-8">
               <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
                 Trust Score
               </p>
@@ -229,6 +235,84 @@ export default function ComparePage() {
           </div>
         </div>
       </section>
+      <div className="mt-12 rounded-[30px] bg-white p-8 shadow-sm">
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    Why VURA Chose This
+  </p>
+
+  <div className="mt-6 space-y-4 text-lg text-[#667085]">
+
+    <p>✓ Higher trust score</p>
+
+    <p>✓ Better seller reputation</p>
+
+    <p>✓ Lower marketplace risk</p>
+
+    <p>✓ Stronger value for money</p>
+
+    <p>✓ Better long-term purchase confidence</p>
+
+  </div>
+</div>
+<div className="mt-10 rounded-[30px] bg-white p-8 shadow-sm">
+
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    AI Confidence
+  </p>
+
+  <h3 className="mt-4 text-6xl font-bold text-[#8b6f47]">
+    94%
+  </h3>
+
+  <p className="mt-4 text-[#667085]">
+    VURA is highly confident that this is the safer purchase.
+  </p>
+
+</div>
+<div className="mt-10 rounded-[30px] bg-white p-8 shadow-sm">
+
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    AI Confidence
+  </p>
+
+  <h3 className="mt-4 text-6xl font-bold text-[#8b6f47]">
+    94%
+  </h3>
+
+  <p className="mt-4 text-[#667085]">
+    VURA is highly confident that this is the safer purchase.
+  </p>
+
+</div>
+<div className="mt-16 rounded-[35px] bg-white p-8 shadow-sm">
+
+  <p className="uppercase tracking-[0.3em] text-[#b08968] text-sm">
+    Recent Comparisons
+  </p>
+
+  <div className="mt-8 space-y-6">
+
+    <div>
+      <h4 className="text-xl">
+        Nike Air Max vs Luxury Tote Bag
+      </h4>
+      <p className="text-[#667085]">
+        Nike Air Max won
+      </p>
+    </div>
+
+    <div>
+      <h4 className="text-xl">
+        AirPods Max vs Sony WH-1000XM5
+      </h4>
+      <p className="text-[#667085]">
+        Sony WH-1000XM5 won
+      </p>
+    </div>
+
+  </div>
+
+</div>
     </main>
   )
 }
