@@ -1,48 +1,52 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Navbar from "../components/Navbar"
 
 export default function ComparePage() {
-  const products = [
-    {
-      name: "Nike Air Max",
-      image: "/images/shoe.png",
-      price: "₱5,990",
-      trust: 92,
-      recommendation: "Recommended",
-      risk: "8%",
-      intelligence: "Good Deal",
-    },
 
-    {
-      name: "Luxury Tote Bag",
-      image: "/images/bag.png",
-      price: "₱4,490",
-      trust: 84,
-      recommendation: "Good Purchase",
-      risk: "14%",
-      intelligence: "Fair Price",
-    },
 
-    {
-      name: "Smart Watch Pro",
-      image: "/images/watch.png",
-      price: "₱8,990",
-      trust: 58,
-      recommendation: "Risky Seller",
-      risk: "37%",
-      intelligence: "Overpriced",
-    },
-  ]
+  const [products, setProducts] = useState<any[]>([])
 
-  const [leftProduct, setLeftProduct] =
-    useState(products[0])
+const [leftProduct, setLeftProduct] =
+  useState<any>(null)
 
-  const [rightProduct, setRightProduct] =
-    useState(products[1])
+const [rightProduct, setRightProduct] =
+  useState<any>(null)
+useEffect(() => {
+  const saved =
+    JSON.parse(localStorage.getItem("vura-closet") || "[]")
 
+  setProducts(saved)
+
+  if (saved.length > 0) {
+    setLeftProduct(saved[0])
+  }
+
+  if (saved.length > 1) {
+    setRightProduct(saved[1])
+  }
+}, [])
+if (!leftProduct || !rightProduct) {
+  return (
+    <main className="min-h-screen bg-[#efe7dc]">
+      <Navbar />
+
+      <section className="px-6 md:px-16 pt-32">
+        <div className="rounded-[40px] bg-white p-12 text-center">
+          <h2 className="text-4xl font-serif">
+            Save at least 2 products first
+          </h2>
+
+          <p className="mt-4 text-[#667085]">
+            Add products to your AI Closet before using Compare.
+          </p>
+        </div>
+      </section>
+    </main>
+  )
+}
   const betterProduct =
     leftProduct.trust > rightProduct.trust
       ? leftProduct
@@ -82,30 +86,33 @@ export default function ComparePage() {
           {/* LEFT SELECT */}
           <select
             onChange={(e) =>
-              setLeftProduct(
-                products.find(
-                  (p) => p.name === e.target.value
-                ) || products[0]
-              )
-            }
+  setLeftProduct(
+    products.find(
+      (p) => p.name === e.target.value
+    )
+  )
+}
             className="rounded-full border border-[#d0d5dd] bg-[#efe7dc] px-6 py-5 text-lg"
           >
             {products.map((product, index) => (
-              <option key={index}>
-                {product.name}
-              </option>
+              <option
+  key={index}
+  value={product.name}
+>
+  {product.name}
+</option>
             ))}
           </select>
 
           {/* RIGHT SELECT */}
           <select
             onChange={(e) =>
-              setRightProduct(
-                products.find(
-                  (p) => p.name === e.target.value
-                ) || products[1]
-              )
-            }
+  setRightProduct(
+    products.find(
+      (p) => p.name === e.target.value
+    )
+  )
+}
             className="rounded-full border border-[#d0d5dd] bg-[#efe7dc] px-6 py-5 text-lg"
           >
             {products.map((product, index) => (
