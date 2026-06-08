@@ -175,9 +175,12 @@ export default function ClosetPage() {
 </div>
 {products.length === 0 && (
 
-  <div className="mt-12 rounded-[40px] bg-[#efe7dc] border border-[#d6c6b8] p-16 text-center shadow-sm">
+  <div className="mt-12 rounded-[40px] bg-[#efe7dc] border border-[#d6c6b8] p-10 text-center shadow-sm">
 
-    <h2 className="text-5xl text-[#2b2b2b]">
+    <h2 className="text-4xl text-[#2b2b2b]">
+      <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#8b6f47]/10 text-4xl text-[#8b6f47]">
+  ♡
+</div>
       Your AI Closet is Empty
     </h2>
 
