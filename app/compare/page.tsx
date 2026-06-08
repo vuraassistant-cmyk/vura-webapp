@@ -50,8 +50,10 @@ if (!leftProduct || !rightProduct) {
   const betterProduct =
     leftProduct.trust > rightProduct.trust
       ? leftProduct
-      : rightProduct
-
+      : rightProduct 
+      
+const sameProduct =
+  leftProduct?.name === rightProduct?.name
   return (
     <main className="min-h-screen bg-[#efe7dc] text-[#2b2b2b]">
       <Navbar />
@@ -122,7 +124,17 @@ if (!leftProduct || !rightProduct) {
             ))}
           </select>
         </div>
+{sameProduct && (
+  <div className="mt-12 rounded-[30px] bg-white p-8 text-center shadow-sm">
+    <h3 className="text-2xl font-serif text-[#0f172a]">
+      Select Two Different Products
+    </h3>
 
+    <p className="mt-4 text-[#667085]">
+      VURA needs two unique products to generate a comparison.
+    </p>
+  </div>
+)}
         {/* AI VERDICT */}
         <div className="mt-16 rounded-[40px] bg-[#8b6f47] text-white p-10 text-center">
           <p className="uppercase tracking-[0.3em] text-sm text-white-200">
@@ -130,13 +142,15 @@ if (!leftProduct || !rightProduct) {
           </p>
 
           <h2 className="text-5xl font-serif mt-6">
-            {betterProduct.name} Wins
-          </h2>
+  {sameProduct
+    ? "Select Different Products"
+    : `${betterProduct.name} Wins`}
+</h2>
 
           <p className="mt-6 text-xl text-white leading-relaxed max-w-3xl mx-auto">
-            VURA recommends {betterProduct.name} because it has a
-            higher trust score, lower marketplace risk, and stronger
-            seller reliability indicators.
+            {sameProduct
+  ? "Choose two different products to generate an AI comparison."
+  : `VURA recommends ${betterProduct.name} because it has a higher trust score, lower marketplace risk, and stronger seller reliability indicators.`}
           </p>
         </div>
 
@@ -273,7 +287,7 @@ if (!leftProduct || !rightProduct) {
   </p>
 
   <h3 className="mt-4 text-6xl font-bold text-[#8b6f47]">
-    {betterProduct.trust + 2}%
+    {betterProduct.trust}%
   </h3>
 
   <p className="mt-4 text-[#667085]">
